@@ -39,6 +39,7 @@ function buttonValidadeForm(form) {
     let name = document.getElementById("name").value;
     let email = document.getElementById("email").value;
     var contErro = 0;
+    var regex = /^\S+@\S+\.\S+$/;
 
     caixa_nome = document.querySelector('.msg-nome');
     caixa_email = document.querySelector('.msg-email');
@@ -48,6 +49,8 @@ function buttonValidadeForm(form) {
         caixa_nome.style.color = "Red";
         caixa_nome.style.display = 'block';
         contErro += 1;
+    } else {
+        caixa_nome.style.display = 'none'
     }
     
     if(email == "") {
@@ -56,11 +59,20 @@ function buttonValidadeForm(form) {
         caixa_email.style.display = 'block';
         contErro += 1;
     }
+    else if(regex.test(email) === false) {
+        caixa_email.innerHTML = "Favor preencher email valido!";
+        caixa_email.style.color = "Red";
+        caixa_email.style.display = 'block';
+        contErro += 1;
+    } else {
+        caixa_email.style.display = 'none'
+    }
     
     if(contErro == 0){
         $('#download-upload-planilha').css('display', 'block');
         $('#form-cadastro').css('display', 'none');
-        form.submit();
+        // form.submit();
+        return false;
     }
     else {
         return false;

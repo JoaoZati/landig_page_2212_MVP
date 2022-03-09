@@ -58,6 +58,8 @@ function buttonValidadeForm(form) {
     }
     
     if(contErro == 0){
+        $('#download-upload-planilha').css('display', 'block');
+        $('#form-cadastro').css('display', 'none');
         form.submit();
     }
     else {

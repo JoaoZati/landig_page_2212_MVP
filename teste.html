@@ -1,0 +1,46 @@
+<head>
+    <link rel="stylesheet" type="text/css" href="static/css/style.css" media="screen" />
+    <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet" type="text/css">
+    <style>
+        .uploadBox {
+                position: absolute;
+                background: lightblue;
+                width: 300px;
+                height: 200px;
+            }
+        .imageUploadInput {
+                display: none;
+            }
+    </style>
+</head>
+<bodu>
+    <label class="btn btn-primary" for="my-file-selector">
+        <input id="my-file-selector" type="file" style="display:none" onchange="">
+        Button Text Here
+    </label>
+    <span class='label label-info' id="upload-file-info"></span>
+
+    <br>
+    <br>
+
+    <label class="file-label" for='selecao-arquivo' style="text-align: center;">
+        SELECIONE A PLANILHA &#187; <input id='selecao-arquivo' type='file' hidden>
+    </label>
+
+    <br>
+    <br>
+
+    <!-- <form id="fileUploadForm" enctype="multipart/form-data"> -->
+        <label for="selecao-arquivo" class="uploadBox">
+            <p id="uploadMsg">Filename will appear here after file has been selected</p>
+            <input id="selecao-arquivo" class="imageUploadInput" type="file" name="image" accept="image/*">
+        </label>
+    <!-- </form> -->
+
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.mask/1.14.11/jquery.mask.min.js"></script>
+    <script type="text/javascript">$("#telefone").mask("(00) 00000-0000");</script>
+    <script src="static/js/main.js"></script>
+    
+</bodu>

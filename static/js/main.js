@@ -78,3 +78,18 @@ function buttonValidadeForm(form) {
         return false;
     }    
 }
+
+let imageUpload = document.getElementById("selecao-arquivo");
+let uploadMsg = document.getElementById("uploadMsg");
+// display file name if file has been selected
+imageUpload.onchange = function() {
+  let input = this.files[0];
+  let text;
+  if (input) {
+    //process input
+    text = input['name'];
+  } else {
+    text = "Please select a file";
+  }
+  uploadMsg.innerHTML = text;
+};
